@@ -50,7 +50,7 @@ class Wobbler {
 	/**
 	 * The frequency of breaks in a line
 	 */
-	float breakFrequency = 0.2;
+	float breakFrequency = 0.3;
 
 	// ------------------------------------------------
 	// CONSTRUCTORS
