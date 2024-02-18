@@ -12,7 +12,7 @@ Save to SVG for clean pen plotter input.
 ### Requirements
 
 -   [Processing 4](https://processing.org/download/)
--   The [ControlP5](https://github.com/sojamo/controlp5) library is required to run the `guiControl` example sketch.
+-   The [LazyGUI](https://github.com/KrabCode/LazyGui) library is required to run the `GuiControl` example sketch.
 
 ### Installation
 
