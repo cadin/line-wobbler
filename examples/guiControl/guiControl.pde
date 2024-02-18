@@ -1,19 +1,16 @@
-import controlP5.*;
-
- //import the LazyGUI library
+//import the LazyGUI library
 import com.krab.lazy.*;
 LazyGui gui;
-ControlP5 cp5;
-
 
 // instantiate the Wobbler
 Wobbler wob = new Wobbler();
 
 void setup() {
 	size(1200, 800, P2D);
-	gui = new LazyGui(this);
 	pixelDensity(2);
- 
+
+	// set up LazyGUI controls
+	gui = new LazyGui(this);
 	gui.pushFolder("wobbler"); 
 		gui.toggle("drawGuides", wob.drawGuides);
 		
@@ -26,10 +23,7 @@ void setup() {
 		gui.pushFolder("endPoints");
 			gui.toggle("wobbleEndPointAmplitude", wob.wobbleEndPointAmplitude);
 			gui.toggle("wobbleEndPointPosition", wob.wobbleEndPointPosition);
-
 		gui.popFolder();
-		
-		
 		
 		gui.pushFolder("breaks");
 			gui.slider("minBreakSize", wob.minBreakSize, 0.1, 20);
@@ -44,6 +38,7 @@ void draw() {
 	background(255);
 	randomSeed(1000);
 
+	// read Wobbler settings from LazyGUI
 	gui.pushFolder("wobbler"); 
 		wob.drawGuides = gui.toggle("drawGuides");
 		gui.pushFolder("basic");
@@ -63,6 +58,7 @@ void draw() {
 		gui.popFolder();
 	gui.popFolder();
 	
+	// draw some lines using the Wobbler
 	wob.drawLine(50, 300, width - 50, 300);
 	wob.drawBrokenLine(50, 400, width - 50, 400);
 }
