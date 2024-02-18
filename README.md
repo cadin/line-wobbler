@@ -51,6 +51,11 @@ Create an instance of the LineWobbler class.
 
 ### Drawing Lines
 
+```java
+LineWobbler wob = new LineWobbler();
+wob.drawLine(10, 20, 290, 20);
+```
+
 _PVector[]_ **drawLine**( _float_ x1, _float_ y1, _float_ x2, _float_ y2 )
 
 Draw a line between two points.  
@@ -63,6 +68,14 @@ Returns the array of subpoints used to render the wobbly line.
 
 ### Drawing Polylines
 
+```java
+LineWobbler wob = new LineWobbler();
+PVector[] points = {
+  new PVector(0, 0), new PVector(100, 100), new PVector(200, 0)
+};
+wob.drawPolyline(points);
+```
+
 _void_ **drawPolyline**( _PVector[]_ vertices, [ _boolean_ connectEnds ])
 
 Draw a multi-segment line through an array of points.  
@@ -74,6 +87,11 @@ Draw a broken multi-segment line through an array of points.
 `connectEnds` specifies whether or not the last point in the line should be connected back to the first to form a closed shape.
 
 ### Drawing Rectangles
+
+```java
+LineWobbler wob = new LineWobbler();
+wob.drawRect(20, 180, 370, 100);
+```
 
 _void_ **drawRect**( _float_ x, _float_ y, _float_ w, _float_ h, [ _boolean_ connectCorners])
 
@@ -89,6 +107,11 @@ Draw a rectangle with the given dimensions using broken lines.
 
 ### Drawing Circles
 
+```java
+LineWobbler wob = new LineWobbler();
+wob.drawCircle(210, 400, 100);
+```
+
 _void_ **drawCircle**( _float_ x, _float_ y, _float_ r, [ _int_ numSegments ] )
 
 Draw a circle with the given dimensions.
@@ -103,7 +126,14 @@ Wobbly circles are rendered by breaking up the circle into many straight segment
 
 ### Drawing Shapes
 
-Note that the LineWobbler only extracts the shape's vertices and connects them with straight lines (no curves). Drawing shapes with large curves will most likely produce undesirable results unless those curves are first broken up by adding intermediate points.
+```java
+LineWobbler wob = new LineWobbler();
+PShape shape = loadShape("complexShape.svg");
+wob.drawShape(shape);
+```
+
+> [!NOTE]
+> LineWobbler only extracts the shape's vertices and connects them with straight lines (no curves). Drawing shapes with large curves will most likely produce undesirable results unless those curves are first broken up by adding intermediate points.
 
 _void_ **drawShape**( _PShape_ shape )
 
