@@ -35,12 +35,12 @@ class Wobbler {
 	/**
 	 * The minimum size of a break in a line (in pixels)
 	 */
-	float minBreakSize = 2;
+	float minBreakSize = 0.2;
 
 	/**
 	 * The maximum size of a break in a line (in pixels)
 	 */
-	float maxBreakSize = 10;
+	float maxBreakSize = 5;
 
 	/**
 	 * The minimum length of a broken line segment (in pixels)
@@ -50,7 +50,7 @@ class Wobbler {
 	/**
 	 * The frequency of breaks in a line
 	 */
-	float breakFrequency = 1.0;
+	float breakFrequency = 0.3;
 
 	// ------------------------------------------------
 	// CONSTRUCTORS
@@ -501,7 +501,7 @@ class Wobbler {
 		PVector[] points = new PVector[numberOfSegments + 1];
 		points[0] = new PVector(x1, y1);
 		points[points.length - 1] = new PVector(x2, y2);
-		float jitter = frequencyJitter * frequency;
+		float jitter = max(frequencyJitter * frequency, 0.001);
 
 		float slope = (y2 - y1) / (x2 - x1);
 		float angle = atan(slope);

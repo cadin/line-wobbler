@@ -501,7 +501,7 @@ class Wobbler {
 		PVector[] points = new PVector[numberOfSegments + 1];
 		points[0] = new PVector(x1, y1);
 		points[points.length - 1] = new PVector(x2, y2);
-		float jitter = frequencyJitter * frequency;
+		float jitter = max(frequencyJitter * frequency, 0.001);
 
 		float slope = (y2 - y1) / (x2 - x1);
 		float angle = atan(slope);
