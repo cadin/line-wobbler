@@ -2,8 +2,8 @@
 import com.krab.lazy.*;
 LazyGui gui;
 
-// instantiate the Wobbler
-Wobbler wob = new Wobbler();
+// instantiate the LineWobbler
+LineWobbler wob = new LineWobbler();
 
 void setup() {
 	size(1200, 800, P2D);
@@ -38,7 +38,7 @@ void draw() {
 	background(255);
 	randomSeed(1000);
 
-	// read Wobbler settings from LazyGUI
+	// read LineWobbler settings from LazyGUI
 	gui.pushFolder("wobbler"); 
 		wob.drawGuides = gui.toggle("drawGuides");
 		gui.pushFolder("basic");
@@ -58,7 +58,7 @@ void draw() {
 		gui.popFolder();
 	gui.popFolder();
 	
-	// draw some lines using the Wobbler
+	// draw some lines using the LineWobbler
 	wob.drawLine(50, 300, width - 50, 300);
 	wob.drawBrokenLine(50, 400, width - 50, 400);
 }

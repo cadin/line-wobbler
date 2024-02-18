@@ -1,6 +1,6 @@
 import java.util.Arrays; 
 
-class Wobbler {
+class LineWobbler {
 
 	/**
 	 * The distance between subpoints (in pixels)
@@ -54,13 +54,13 @@ class Wobbler {
 
 	// ------------------------------------------------
 	// CONSTRUCTORS
-	Wobbler() {}
+	LineWobbler() {}
 
 	/**
 	 * @param frequency the distance between subpoints (in pixels)
 	 * @param amplitude how much the subpoints can deviate from the line (in pixels)
 	 */
-	Wobbler(int frequency, float amplitude ) {
+	LineWobbler(int frequency, float amplitude ) {
 		this.frequency = frequency;
 		this.amplitude = amplitude;
 	}
@@ -70,7 +70,7 @@ class Wobbler {
 	 * @param amplitude how much the subpoints can deviate from the line (in pixels)
 	 * @param frequencyJitter how much the subpoints can deviate along the line (percentage of frequency)
 	 */
-	Wobbler(int frequency, float amplitude, float frequencyJitter) {
+	LineWobbler(int frequency, float amplitude, float frequencyJitter) {
 		this.frequency = frequency;
 		this.amplitude = amplitude;
 		this.frequencyJitter = frequencyJitter;

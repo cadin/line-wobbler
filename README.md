@@ -1,4 +1,4 @@
-# wobbler
+# line-wobbler
 
 Generate wobbly hand-drawn lines in Processing.  
 Save to SVG for clean pen plotter input.
@@ -16,15 +16,15 @@ Save to SVG for clean pen plotter input.
 
 ### Installation
 
-Copy the `Wobbler.pde` file from the [`dist`](dist/) folder into the folder for your Processing sketch.
+Copy the `LineWobbler.pde` file from the [`src`](src/) folder into the folder for your Processing sketch.
 
 ### Example Sketch
 
-1. Create an instance of the `Wobbler` class with the path to your font.
+1. Create an instance of the `LineWobbler` class with the path to your font.
 2. Use `drawLine()` or other drawing functions to create graphics with wobbly lines.
 
 ```java
-Wobbler wob = new Wobbler();
+LineWobbler wob = new LineWobbler();
 
 void setup() {
   size(300, 200);
@@ -42,9 +42,9 @@ void draw() {
 
 ### Instantiation
 
-_Wobbler_ **new Wobbler**( [ _int_ frequency, _float_ amplitude, _float_ frequencyJitter ] )
+_LineWobbler_ **new LineWobbler**( [ _int_ frequency, _float_ amplitude, _float_ frequencyJitter ] )
 
-Create an instance of the Wobbler class.  
+Create an instance of the LineWobbler class.  
 `frequency` sets the frequency of subpoints (in pixels).  
 `amplitude` sets how much the subpoints can deviate from the line (in pixels).  
 `frequencyJitter` sets how much the subpoints can deviate parallel to the line (as a percentage of of `frequency`)
@@ -103,7 +103,7 @@ Wobbly circles are rendered by breaking up the circle into many straight segment
 
 ### Drawing Shapes
 
-Note that the Wobbler only extracts the shape's vertices and connects them with straight lines (no curves). Drawing shapes with large curves will most likely produce undesirable results unless those curves are first broken up by adding intermediate points.
+Note that the LineWobbler only extracts the shape's vertices and connects them with straight lines (no curves). Drawing shapes with large curves will most likely produce undesirable results unless those curves are first broken up by adding intermediate points.
 
 _void_ **drawShape**( _PShape_ shape )
 
@@ -161,18 +161,18 @@ The frequency of breaks in a line when using the broken line drawing methods.
 
 ### Randomization
 
-Wobbler lines are recalculated with random values every frame. This will cause the lines to constantly move in sketches that utitlize a `draw()` loop. Calling the [`randomSeed()`](https://processing.org/reference/randomSeed_.html) function at the beginning of the draw loop will ensure that the same random values are used on each frame. Change the value sent to `randomSeed()` to calculate new random values.
+LineWobbler lines are recalculated with random values every frame. This will cause the lines to constantly move in sketches that utitlize a `draw()` loop. Calling the [`randomSeed()`](https://processing.org/reference/randomSeed_.html) function at the beginning of the draw loop will ensure that the same random values are used on each frame. Change the value sent to `randomSeed()` to calculate new random values.
 
 ### Animation
 
-Wobbler performs many unoptimized calculations on each frame. It is not meant to be used for animated sketches, and will most likely cause performance slowdowns if used for animations.
+LineWobbler performs many unoptimized calculations on each frame. It is not meant to be used for animated sketches, and will most likely cause performance slowdowns if used for animations.
 
 ## Build from Source
 
 The build script for this project (`build.sh`) simply copies the class from `src` into the example sketches in the `examples` folder.
 
 ```zsh
-cd [wobbler]
+cd [line-wobbler]
 ./build.sh
 ```
 

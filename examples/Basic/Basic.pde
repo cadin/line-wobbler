@@ -1,5 +1,5 @@
-// instantiate the Wobbler class
-Wobbler wob = new Wobbler();
+// instantiate the LineWobbler class
+LineWobbler wob = new LineWobbler();
 
 // create an array of points to draw as a polyline
 PVector[] polylinePoints = {
