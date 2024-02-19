@@ -135,11 +135,11 @@ wob.drawShape(shape);
 > [!NOTE]
 > LineWobbler only extracts the shape's vertices and connects them with straight lines (no curves). Drawing shapes with large curves will most likely produce undesirable results unless those curves are first broken up by adding intermediate points.
 
-_void_ **drawShape**( _PShape_ shape )
+_void_ **drawShape**( _PShape_ shape, [ _float_ x, _float_ y ] )
 
 Draw a shape (such as a loaded SVG) with wobbly lines.
 
-_void_ **drawBrokenShape**( _PShape_ shape )
+_void_ **drawBrokenShape**( _PShape_ shape, [ _float_ x, _float_ y ] )
 
 Draw a shape (such as a loaded SVG) with wobbly broken lines.
 
