@@ -335,11 +335,38 @@ class LineWobbler {
 	}
 
 	/**
+	 * Draw a shape
+	 * @param shape the PShape to draw
+	 * @param x the x-coordinate of the top-left corner
+	 * @param y the y-coordinate of the top-left corner
+	 */
+	void drawShape(PShape shape, float x, float y) {
+		pushMatrix();
+		translate(x, y);
+		drawShape(shape, false);
+		popMatrix();
+	
+	}
+
+	/**
 	 * Draw a broken shape
 	 * @param shape the PShape to draw
 	 */
 	void drawBrokenShape(PShape shape) {
 		drawShape(shape, true);
+	}
+
+	/**
+	 * Draw a broken shape
+	 * @param shape the PShape to draw
+	 * @param x the x-coordinate of the top-left corner
+	 * @param y the y-coordinate of the top-left corner
+	 */
+	void drawBrokenShape(PShape shape, float x, float y) {
+		pushMatrix();
+		translate(x, y);
+		drawShape(shape, true);
+		popMatrix();
 	}
 
 	// ------------------------------------------------
@@ -440,9 +467,20 @@ class LineWobbler {
 			return;
 		}
 
-		PVector[] points = new PVector[vertexCount];
-		for (int i = 0; i < vertexCount; i++) {
-			points[i] = shape.getVertex(i);
+		int[] codes = shape.getVertexCodes();
+		int codesCount = shape.getVertexCodeCount();
+
+		PVector[] points = new PVector[0];
+		int vIndex = 0;
+		for (int i = 0; i < codesCount; i++) {
+			if(codes[i] == VERTEX) {
+				points = (PVector[]) append(points, shape.getVertex(vIndex));
+				vIndex ++;
+			} else {
+				// if this is a curve, skip the control points
+				points = (PVector[]) append(points, shape.getVertex(vIndex + 2));
+				vIndex += 3;
+			}
 		}
 
 		if(broken) {
