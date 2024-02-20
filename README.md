@@ -7,7 +7,7 @@ Save to SVG for clean pen plotter input.
 
 ## Getting Started
 
-<!-- ### 📺 [Video Walkthrough](https://youtu.be/gfdROgQhm8M) -->
+### 📺 [Video Walkthrough](https://youtu.be/eRmvj5s2-kU)
 
 ### Requirements
 
