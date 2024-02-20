@@ -6,7 +6,7 @@ LazyGui gui;
 LineWobbler wob = new LineWobbler();
 
 void setup() {
-	size(1200, 800, P2D);
+	size(1440, 810, P2D);
 	pixelDensity(2);
 
 	// set up LazyGUI controls
@@ -37,6 +37,7 @@ void setup() {
 void draw() {
 	background(255);
 	randomSeed(1000);
+  strokeWeight(2);
 
 	// read LineWobbler settings from LazyGUI
 	gui.pushFolder("wobbler"); 

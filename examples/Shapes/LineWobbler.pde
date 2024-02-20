@@ -589,23 +589,26 @@ class LineWobbler {
 
 	private void drawGuideline(float x1, float y1, float x2, float y2) {
 		stroke(0, 255, 255);
+		float prevStrokeWeight = g.strokeWeight;
+		strokeWeight(1);
 		line(x1, y1, x2, y2);
+		strokeWeight(prevStrokeWeight);
 	}
 
 	private void drawPoints(PVector[] points) {
 		noStroke();
-		fill(255, 0, 0, 200);
+		fill(255, 0, 0);
 		for (int i = 0; i < points.length; i++) {
 			PVector p1 = points[i];
-			ellipse(p1.x, p1.y, 3, 3);
+			circle(p1.x, p1.y, 6);
 		}
 	}
 
 	private void drawEndPoints(PVector p1, PVector p2) {
 		noStroke();
-		fill(0, 255, 0, 100);
-		ellipse(p1.x, p1.y, 6, 6);
-		ellipse(p2.x, p2.y, 6, 6);
+		fill(0, 255, 0, 200);
+		circle(p1.x, p1.y, 10);
+		circle(p2.x, p2.y, 10);
 	}
 
 }
