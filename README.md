@@ -20,7 +20,7 @@ Copy the `LineWobbler.pde` file from the [`src`](src/) folder into the folder fo
 
 ### Example Sketch
 
-1. Create an instance of the `LineWobbler` class with the path to your font.
+1. Create an instance of the `LineWobbler` class.
 2. Use `drawLine()` or other drawing functions to create graphics with wobbly lines.
 
 ```java
